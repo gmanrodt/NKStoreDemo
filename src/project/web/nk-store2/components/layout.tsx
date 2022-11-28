@@ -26,7 +26,7 @@ export default function Layout({  children, title, description } : ILayout) {
 
     </Head>
     <body className="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
-    <Nav />
+      {/* <Nav /> */}
       <main>{children}</main>
     </body>
     </>
