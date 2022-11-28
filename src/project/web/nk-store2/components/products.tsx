@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Products({ products, heading }: any) {
   return (
     <section className="bg-white py-8">
@@ -50,7 +52,14 @@ export default function Products({ products, heading }: any) {
             key={p.codename}
           >
             <a href="#">
-              <img className="hover:grow hover:shadow-lg" src={p.image} />
+              <Image
+                priority
+                className="hover:grow hover:shadow-lg"
+                src={p.image}
+                alt={p.name}
+                height={300}
+                width={300}
+              />
               <div className="pt-3 flex items-center justify-between">
                 <p className="">{p.name}</p>
                 <svg
