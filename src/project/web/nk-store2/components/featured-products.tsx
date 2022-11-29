@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Products({ products, heading }: any) {
+export default function FeaturedProducts({ products, heading }: any) {
   return (
     <section className="bg-white py-8">
       <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
@@ -51,15 +51,16 @@ export default function Products({ products, heading }: any) {
             className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"
             key={p.codename}
           >
-            <a href="#">
-              <Image
-                priority
-                className="hover:grow hover:shadow-lg"
-                src={p.image}
-                alt={p.name}
-                height={300}
-                width={300}
-              />
+            <a href={p.productUrl}>
+                <div className="image-container">
+                <Image
+                    className="image hover:grow hover:shadow-lg"
+                    src={p.image}
+                    alt={p.name}
+                    height={400}
+                    width={400}
+                />
+              </div>
               <div className="pt-3 flex items-center justify-between">
                 <p className="">{p.name}</p>
                 <svg

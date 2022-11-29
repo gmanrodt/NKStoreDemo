@@ -3,15 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    // remotePatterns: [
-    //   {
-    //     protocol: "https",
-    //     hostname: "assets-us-01.kc-usercontent.com",
-    //     port: "443",
-    //     pathname: "/9d6858cd-ceea-0076-31e7-72c3266ce1fd/**",
-    //   },
-    // ],
-    domains:['assets-us-01.kc-usercontent.com']
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets-us-01.kc-usercontent.com",
+        // port: "443",
+        // pathname: "/9d6858cd-ceea-0076-31e7-72c3266ce1fd/**",
+      },
+    ],
+    //domains:['assets-us-01.kc-usercontent.com']
   },
 };
 

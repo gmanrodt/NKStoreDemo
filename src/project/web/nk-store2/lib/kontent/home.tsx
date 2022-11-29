@@ -36,7 +36,8 @@ export async function getHomePageKontent(){
             description: productData.elements.description.value,
             price: productData.elements.price.value,
             image: productData.elements.images.value[0].url,
-            codename: productData.system.codename
+            codename: productData.system.codename,
+            productUrl: '/products/' + productData.system.codename
         };
         featuredProducts.push(mappedProduct);
     });
@@ -45,8 +46,9 @@ export async function getHomePageKontent(){
         heroBanner : 
         {
             headline: pageData.modular_content.home_page_hero_banner.elements.headline.value,
-            background_image: pageData.modular_content.home_page_hero_banner.elements.background_image.value,
-            cta_text: pageData.modular_content.home_page_hero_banner.elements.cta_text.value
+            background_image: pageData.modular_content.home_page_hero_banner.elements.background_image.value[0],
+            cta_text: pageData.modular_content.home_page_hero_banner.elements.cta_text.value,
+            cta_route: pageData.modular_content.home_page_hero_banner.elements.cta_route.value
         }, featuredProducts: {
             heading: pageData.item.elements.feature_products.name,
             products: featuredProducts

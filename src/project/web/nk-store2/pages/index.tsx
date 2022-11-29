@@ -1,8 +1,8 @@
+import Head from "next/head";
 import About from "../components/about";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
-import Layout from "../components/layout";
-import Products from "../components/products";
+import FeaturedProducts from "../components/featured-products";
 import { getHomePageKontent } from "../lib/kontent/home";
 
 export default function Home({homePage}: any) {
@@ -10,15 +10,12 @@ export default function Home({homePage}: any) {
 
   return (
     <>
-    {/* <Layout
-      title="Home"
-      description="NK Shop is a site for demonstrating the capabilities of NextJS, TailwindCSS, and Kontent.ai"
-    > */}
-      <Hero headline={homePage?.heroBanner?.headline} background_image={homePage?.heroBanner?.background_image} cta_text={homePage?.heroBanner?.cta_text}/>
-      <Products products={homePage.featuredProducts.products} heading={homePage.featuredProducts.heading}  />
+    <Head>
+      <title>Home | NK Shops</title>
+    </Head>
+      <Hero headline={homePage?.heroBanner?.headline} background_image={homePage?.heroBanner?.background_image} cta_text={homePage?.heroBanner?.cta_text} cta_route={homePage?.heroBanner?.cta_route}/>
+      <FeaturedProducts products={homePage.featuredProducts.products} heading={homePage.featuredProducts.heading}  />
       <About />
-      <Footer />
-    {/* </Layout> */}
     </>
   );
 }
