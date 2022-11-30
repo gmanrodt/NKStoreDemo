@@ -48,17 +48,17 @@ export default function FeaturedProducts({ products, heading }: any) {
         </nav>
         {products.map((p: any) => (
           <div
-            className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"
+            className="w-full l:w-1/3 md:w-1/2 xl:w-1/4 p-6 flex flex-col"
             key={p.codename}
           >
             <a href={p.productUrl}>
-                <div className="image-container">
+              <div className="image-container">
                 <Image
-                    className="image hover:grow hover:shadow-lg"
-                    src={p.image}
-                    alt={p.name}
-                    height={400}
-                    width={400}
+                  className="image hover:grow hover:shadow-lg"
+                  src={p.image}
+                  alt={p.name}
+                  height={400}
+                  width={400}
                 />
               </div>
               <div className="pt-3 flex items-center justify-between">

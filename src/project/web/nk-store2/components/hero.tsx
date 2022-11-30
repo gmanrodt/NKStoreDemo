@@ -19,8 +19,11 @@ export default function Hero({headline, background_image, cta_text, cta_route}: 
 	<div className="container mx-auto">
 		<div className="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide">
 			<h1 className="text-white text-4xl my-4">{headline}</h1>
-			(if{cta_text && cta_route})
+			{(cta_text && cta_route) ?
+			(
 			<a className="text-2xl text-white inline-block no-underline border-b border-white-600 leading-relaxed hover:text-white hover:border-white" href={cta_route}>{cta_text}</a>
+			):
+			<></>}
 		</div>
 	  </div>
 </section>
