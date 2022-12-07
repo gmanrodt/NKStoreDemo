@@ -1,12 +1,13 @@
 import { getKontentItem } from "./kontent";
 
 export async function getProductPageKontent(){
-    const res = await getKontentItem("?system.type=product");
+    const res = await getKontentItem("products");
     const pageData = res.data;
 
     let products:any[]=[];
     
-    pageData.items.map((p: any)=>{
+    pageData.item.elements.products.value.map((p: any)=>{
+        var p = pageData.modular_content[p];
 
         let mappedProduct = {
             name: p.elements.name.value,
@@ -21,6 +22,6 @@ export async function getProductPageKontent(){
 
     return {
         products: products,
-        heading: "This is the heading"
+        heading: pageData.item.elements.heading.value
     }
 }
