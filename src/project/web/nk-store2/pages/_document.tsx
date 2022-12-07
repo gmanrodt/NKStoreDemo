@@ -17,7 +17,6 @@ export default function Document() {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="description" content="description" />
         <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic" />
-        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
