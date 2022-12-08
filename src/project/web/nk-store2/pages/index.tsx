@@ -3,18 +3,17 @@ import About from "../components/about";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
 import FeaturedProducts from "../components/featured-products";
-import { getHomePageKontent } from "../lib/kontent/home";
+import { getHomePageKontent2 } from "../lib/kontent/home";
+import { HomePage } from "../lib/kontent/models";
 
-export default function Home({homePage}: any) {
-  console.log(homePage);
-
+export default function Home({...p}: HomePage) {
   return (
     <>
     <Head>
       <title>Home | NK Shops</title>
     </Head>
-      <Hero headline={homePage?.heroBanner?.headline} background_image={homePage?.heroBanner?.background_image} cta_text={homePage?.heroBanner?.cta_text} cta_route={homePage?.heroBanner?.cta_route}/>
-      <FeaturedProducts products={homePage.featuredProducts.products} heading={homePage.featuredProducts.heading}  />
+      <Hero {...p.homePage.item.elements.hero.linkedItems[0]} />
+      <FeaturedProducts {...p.homePage.item.elements.feature_products} />
       <About />
     </>
   );
@@ -22,7 +21,8 @@ export default function Home({homePage}: any) {
 
 export async function getStaticProps() {
   console.log("here");
-  const homePage = await getHomePageKontent();
+  const homePage = await getHomePageKontent2();
+
   return {
     props: {
       homePage,
