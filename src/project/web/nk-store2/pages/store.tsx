@@ -1,9 +1,10 @@
-import {ProductBrowser} from "@ecwid/nextjs-ecwid-plugin";
+const ecwid = require("@ecwid/nextjs-ecwid-plugin");
+const { ProductBrowser } = ecwid;
 
-export default function Store(){
-    return (
-        <>
-        <ProductBrowser storeId="83145022" />
-        </>
-    )
+export default function Store() {
+  return (
+    <>
+      <ProductBrowser storeId="83145022" />
+    </>
+  );
 }
