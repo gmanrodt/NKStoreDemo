@@ -11,15 +11,15 @@ export default function App({ Component, pageProps }: AppProps) {
          strategy="afterInteractive"
          dangerouslySetInnerHTML={{
            __html: `
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-MVLTHPR40S', {
-      page_path: window.location.pathname,
-     });
-    `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', 'G-MVLTHPR40S', {
+              page_path: window.location.pathname,
+             });
+            `,
          }} />
-	        <Component {...pageProps} />
-        </>
+	      <Component {...pageProps} />
+       </>
         );
 }
