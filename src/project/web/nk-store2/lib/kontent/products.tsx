@@ -1,4 +1,10 @@
-import { getKontentItem } from "./kontent";
+import { deliveryClient, getKontentItem } from "./kontent";
+import { Products } from "./models";
+
+export async function getProductPageKontent2(){
+    const response = await deliveryClient.item<Products>("products").toPromise();
+    return response.data;
+}
 
 export async function getProductPageKontent(){
     const res = await getKontentItem("products");

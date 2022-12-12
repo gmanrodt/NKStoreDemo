@@ -1,4 +1,5 @@
-import {getKontentItem} from './kontent';
+import {deliveryClient, getKontentItem} from './kontent';
+import { HomePage } from './models';
 
 // export interface IHomePage {
 //     item: IKontentItem;
@@ -20,6 +21,13 @@ import {getKontentItem} from './kontent';
 //     name: string;
 //     value: string[];
 // }
+
+
+export async function getHomePageKontent2(){
+    const url = await deliveryClient.item<HomePage>("home").getUrl();
+    const response = await deliveryClient.item<HomePage>("home").toPromise();
+    return response.data;
+}
 
 export async function getHomePageKontent(){
     const res = await getKontentItem("home");

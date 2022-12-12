@@ -16,6 +16,7 @@ export default function Nav(){
             <nav>
                 <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                     <li><Link className="inline-block no-underline hover:text-black hover:underline py-2 px-4" aria-label="Shop" href="/products">Shop</Link></li>
+                    <li><Link className="inline-block no-underline hover:text-black hover:underline py-2 px-4" aria-label="Shop" href="/store">Ecwid Store</Link></li>
                     <li><Link className="inline-block no-underline hover:text-black hover:underline py-2 px-4" aria-label="About" href="/about">About</Link></li>
                 </ul>
             </nav>
