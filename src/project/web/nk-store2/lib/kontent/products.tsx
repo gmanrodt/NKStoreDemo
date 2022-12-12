@@ -3,7 +3,7 @@ import { Products } from "./models";
 
 export async function getProductPageKontent2(){
     const response = await deliveryClient.item<Products>("products").toPromise();
-    return response.data;
+    return response.data.item;
 }
 
 export async function getProductPageKontent(){

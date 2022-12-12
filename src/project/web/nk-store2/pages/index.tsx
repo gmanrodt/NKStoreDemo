@@ -7,13 +7,14 @@ import { getHomePageKontent2 } from "../lib/kontent/home";
 import { HomePage } from "../lib/kontent/models";
 
 export default function Home({...p}: HomePage) {
+  console.log(p);
   return (
     <>
     <Head>
       <title>Home | NK Shops</title>
     </Head>
-      <Hero {...p.homePage.item.elements.hero.linkedItems[0]} />
-      <FeaturedProducts {...p.homePage.item.elements.feature_products} />
+      <Hero {...p.elements.hero.linkedItems[0]} />
+      <FeaturedProducts {...p.elements.feature_products} />
       <About />
     </>
   );
@@ -22,10 +23,10 @@ export default function Home({...p}: HomePage) {
 export async function getStaticProps() {
   console.log("here");
   const homePage = await getHomePageKontent2();
-
+  console.log(homePage);
   return {
     props: {
-      homePage,
+      ...homePage,
     },
   };
 }

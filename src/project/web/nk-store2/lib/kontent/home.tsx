@@ -26,7 +26,7 @@ import { HomePage } from './models';
 export async function getHomePageKontent2(){
     const url = await deliveryClient.item<HomePage>("home").getUrl();
     const response = await deliveryClient.item<HomePage>("home").toPromise();
-    return response.data;
+    return response.data.item;
 }
 
 export async function getHomePageKontent(){

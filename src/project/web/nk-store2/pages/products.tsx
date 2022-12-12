@@ -1,16 +1,15 @@
-import { IContentItem } from "@kontent-ai/delivery-sdk";
 import Head from "next/head";
 import ProductCard from "../components/product-card";
 import { Product, Products } from "../lib/kontent/models";
 import { getProductPageKontent2 } from "../lib/kontent/products";
 
-export default function ProductsPage( {...productPage} : IContentItem<Products>) {
+export default function ProductsPage( {...productPage} : Products) {
   console.log(productPage);
 
   let productsArray: Product[] = [];
-  let k: keyof typeof productPage.productPage.linkedItems;
-  for (k in productPage.productPage.linkedItems) {
-    const v = productPage.productPage.linkedItems[k];
+  let k: keyof typeof productPage.elements.products.linkedItems;
+  for (k in productPage.elements.products.linkedItems) {
+    const v = productPage.elements.products.linkedItems[k];
     productsArray.push(v);
   }
 
@@ -34,7 +33,7 @@ export async function getStaticProps() {
   const productPage = await getProductPageKontent2();
   return {
     props: {
-      productPage,
+      ...productPage,
     },
   };
 }
