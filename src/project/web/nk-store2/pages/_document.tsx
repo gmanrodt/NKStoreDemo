@@ -1,6 +1,7 @@
-import { Html, Head, Main, NextScript, Script } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document'
 import Footer from '../components/footer';
 import Nav from '../components/nav';
+import Script from "next/script";
 
 export interface ILayout{
     title:string;
